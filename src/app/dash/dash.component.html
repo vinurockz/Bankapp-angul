@@ -1,0 +1,75 @@
+
+
+    
+        <div class="container">
+            <h4>Welcome {{user}}</h4>
+            <div class="row">
+                <div class="col-4">
+                    <div [ngClass]="acno? 'styDel': '' " class="main">
+                        <h4 appDirective>Deposite</h4><br>
+                    <form [formGroup]="dash" (ngSubmit)="depo()">
+                    
+                        
+                    
+                    <input id="log1" type="text" class="text" name="accno" formControlName="accno" placeholder="Account number"><br><br>
+                    <div *ngIf="(this.dash.get('accno')?.touched 
+                || this.dash.get('accno')?.dirty) && this.dash.get('accno')?.errors" 
+                class="error">account number mistake</div>
+
+
+                    <input id="pass1" type="password" class="text" name="pswd" formControlName="pswd" placeholder="Password" ><br> <br>
+                    <div *ngIf="(this.dash.get('pswd')?.touched 
+                || this.dash.get('pswd')?.dirty) && this.dash.get('pswd')?.errors" 
+                class="error">wrong account password</div>
+
+                    <input id="amo1" type="text" class="text" name="amt" formControlName="amt" placeholder="Amount"><br><br>
+                    <div *ngIf="(this.dash.get('amt')?.touched 
+                || this.dash.get('amt')?.dirty) && this.dash.get('amt')?.errors" 
+                class="error">amount only in number digit</div>
+
+                    <input type="submit" value="Deposite" class="button butefct" > <br><br>
+                    
+                </form>
+                </div>
+                </div>
+                <div class="col-4">
+                    
+                    <div [ngClass]="acno? 'styDel': '' " class="main">
+                        <h4 appDirective>Withdraw</h4><br>
+                    <form [formGroup]="with" (ngSubmit)="withd()">
+                    
+                    
+                    <input id="log" type="text" class="text" name="waccno" formControlName="waccno" placeholder="Account number"><br><br>
+                    <div *ngIf="(this.with.get('waccno')?.touched 
+                || this.with.get('waccno')?.dirty) && this.with.get('waccno')?.errors" 
+                class="error">account number mistake</div>
+                        
+                    
+                    <input id="pass" type="password" class="text" name="wpswd" formControlName="wpswd" placeholder="Password" ><br> <br>
+                    <div *ngIf="(this.with.get('wpswd')?.touched 
+                || this.with.get('wpswd')?.dirty) && this.with.get('wpswd')?.errors" 
+                class="error">wrong account password</div>
+                    
+                    <input id="amo" type="text" class="text" name="wamt" formControlName="wamt" placeholder="Amount"><br><br>
+                    <div *ngIf="(this.with.get('wamt')?.touched 
+                || this.with.get('wamt')?.dirty) && this.with.get('wamt')?.errors" 
+                class="error">amount only in number digit</div>
+
+                    <input type="submit" value="Withdraw" class="button button1 butefct" > <br><br>
+                </form>
+                
+            </div></div>
+            <br>
+            <br>
+                <div class="deletes">
+                    <app-deleteconform (onCancel)="onCancel()" (onDelete)="onDelete($event)" [item]="acno"></app-deleteconform>
+                <button  class="deletebut" type="submit" class="button button1 butefct deletebut" (click)="deleteAc()">Delete Account</button>
+            </div>
+                
+                <div class="col-4 arrg" ><app-animation>
+                   
+                </app-animation> </div>
+                <h5 class="here">Login at: {{ldate | date }}</h5> 
+            </div>
+        </div>
+  

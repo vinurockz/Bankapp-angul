@@ -1,0 +1,24 @@
+.error{
+    color: red;
+}
+
+.styDel{
+    background-color: grey;
+    opacity: 0.2;
+}
+
+.deletebut{
+    width: 200px;
+    position: relative;
+    left:200px;
+}
+
+.arrg{
+    position: absolute; top:80px; left:820px;
+}
+.here{
+    color: red;
+    font-size: 30px;
+    position: relative;
+    left:200px;
+}

@@ -1,0 +1,7 @@
+<div *ngIf="item !='' ">
+    <p>
+        Are you sure do you want to delete {{item}}
+    </p>
+    <button type="submit" (click)="delete()">Delete</button>
+    <button type="submit" (click)="cancel()">Cancel</button>
+</div>

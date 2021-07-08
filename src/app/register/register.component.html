@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+            <div class="main">
+                <form [formGroup]="regisform" (ngSubmit)="register()">
+                <h4>Bank Application Login</h4><br><h5>Register Page</h5>
+
+                <input id="uname" type="text" class="text" formControlName="uname" name="uname" placeholder="User Name"><br> <br>
+                    <div *ngIf="(this.regisform.get('uname')?.touched 
+                    || this.regisform.get('uname')?.dirty) && this.regisform.get('uname')?.errors" 
+                    class="error">username is incorrect</div>
+
+
+
+                <input id="accnotext" type="text" class="text" formControlName="accno" name="accno"  placeholder="Account number"><br><br>
+                <div *ngIf="(this.regisform.get('accno')?.touched 
+                || this.regisform.get('accno')?.dirty) && this.regisform.get('accno')?.errors" 
+                class="error">account number is not valid</div>
+
+
+                <input id="pwdtext" type="password" class="text" formControlName=pswd name="pswd" placeholder="Password"><br> <br>
+                <div *ngIf="(this.regisform.get('pswd')?.touched 
+                || this.regisform.get('pswd')?.dirty) && this.regisform.get('pswd')?.errors" 
+                class="error">wrong password</div>
+
+                
+                <input type="submit" value="Register" class="button butefct" > <br>
+
+                <a class="textfp" routerLink="">Log In</a>
+            </form>
+                <div class="line"></div>
+                
+
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+            <div class="main">
+                <h4>Bank Application Login</h4><br>
+
+                <form [formGroup]="LoginForm" (ngSubmit)="login()">
+
+                <input id="accnotext" type="text" class="text" formControlName="accno" name="accno"  placeholder="Account number"><br><br>
+                <div *ngIf="(this.LoginForm.get('accno')?.touched 
+                || this.LoginForm.get('accno')?.dirty) && this.LoginForm.get('accno')?.errors" 
+                class="error">account number mistake</div>
+
+
+                <input id="pwdtext" type="password" class="text" formControlName="pswd" name="pswd" placeholder="Password"><br> <br>
+                <div *ngIf="(this.LoginForm.get('pswd')?.touched 
+                || this.LoginForm.get('pswd')?.dirty) && this.LoginForm.get('pswd')?.errors" 
+                class="error">password is incorrect</div>
+
+                <input type="submit" value="Log In" class="button butefct" > <br>
+
+                <a class="textfp" href="#">Forgotten password?</a>
+                <div class="line"></div>
+                <input type="button" value="Create New Account" (click)="register()" class="button button1 butefct"> <br><br>
+            </form>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

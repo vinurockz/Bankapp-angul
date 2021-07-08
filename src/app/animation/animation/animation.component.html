@@ -1,0 +1,5 @@
+<div [@openClose]=" isOpen? 'open' : 'close' ">
+    <h1>I'm now {{isOpen? "open" : "close"}}</h1>
+    
+    <button (click)="toggle()">Toggle</button>
+</div>
